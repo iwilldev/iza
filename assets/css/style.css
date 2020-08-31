@@ -38,7 +38,7 @@ li {
     height: 100vh;
     opacity: .15; 
     z-index: -1;
-    background: url('img/music.jpg') no-repeat;
+    background: url('../img/music.jpg') no-repeat;
     background-size: cover;
 }
 
@@ -50,25 +50,24 @@ nav {
     right: 0;
     flex-direction: row;
     justify-content: space-between;
-    background: var(--light-green);
+    background: var(--dark-green);
     height: 4rem;
     align-items: center;
     padding: 0 1rem;
     z-index: 999;
 }
 
-nav > a {
+nav > ul .logo {
     display: flex;
     height: 80%;
-}
-
-nav > a img {
-    height: 100%;
+    color: #fff;
+    text-decoration: none;
+    font-family: 'Monoton', cursive;
 }
 
 nav ul {
     display: flex;
-    color: var(--dark-green);
+    color: #fff;
 }
 
 nav ul li + li {
@@ -86,7 +85,7 @@ nav ul li a:hover {
 
 body > header {
     height: 80vh;
-    background: var(--dark-green) url('img/header.png') no-repeat top right;
+    background: var(--dark-green) url('../img/header.png') no-repeat top right;
     background-size: contain;
     color: var(--light-salmon);
     display: flex;
