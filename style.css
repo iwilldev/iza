@@ -216,6 +216,11 @@ body > header p {
     width: 100%;
     max-width: 560px;
     height: 315px;
+    transition: transform 0.3s;   
+}
+
+#video article a:hover {
+    transform: scale(1.025);
 }
 
 #video article a img {
