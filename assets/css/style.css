@@ -1,0 +1,360 @@
+:root {
+    --dark-green: #006d77;
+    --light-green: #83c5be;
+    --light-salmon: #edf6f9;
+    --light-to-dark-gradient: linear-gradient(to bottom, #83c5be 0%, #83c5be 50%, #006d77 50%);
+    --dark-to-light-gradient: linear-gradient(to bottom, #006d77 0%, #006d77 50%, #83c5be 50%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--light-green);
+}
+
+li {
+    list-style: none;
+}
+
+#top {
+    position: absolute;
+    top: 0;
+}
+
+#top::before {
+    content: "";
+    position: fixed;
+    top: 0; 
+    left: 0;
+    min-width: 100%; 
+    height: 100vh;
+    opacity: .15; 
+    z-index: -1;
+    background: url('../img/music.jpg') no-repeat;
+    background-size: cover;
+}
+
+nav {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    flex-direction: row;
+    justify-content: space-between;
+    background: var(--dark-green);
+    height: 4rem;
+    align-items: center;
+    padding: 0 1rem;
+    z-index: 999;
+}
+
+nav > ul .logo {
+    display: flex;
+    height: 80%;
+    color: #fff;
+    text-decoration: none;
+    font-family: 'Monoton', cursive;
+}
+
+nav ul {
+    display: flex;
+    color: #fff;
+}
+
+nav ul li + li {
+    margin-left: 1rem;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: inherit;
+}
+
+nav ul li a:hover {
+    border-bottom: 1px solid var(--dark-green);
+}
+
+body > header {
+    height: 80vh;
+    background: var(--dark-green) url('../img/header.png') no-repeat top right;
+    background-size: contain;
+    color: var(--light-salmon);
+    display: flex;
+    flex-direction: column;
+    margin-top: 4rem;
+    padding: 3rem 0 0 5rem;
+}
+
+body > header h1 {
+    font-family: 'Monoton', cursive;
+    font-size: 6rem;
+}
+
+body > header p {
+     max-width: 30rem;
+     line-height: 1.5rem;
+}
+
+#music,
+#video {
+    color: var(--dark-green);
+    padding: 0 5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+#video {
+    margin-top: 10rem;
+    background: var(--dark-green);
+    color: var(--light-green);
+    padding-bottom: 10rem;
+}
+
+#music > header,
+#video > header {
+    display: flex;
+    margin-top: -3rem;
+    height: 6rem;
+    align-items: center;
+    margin-bottom: 6rem;
+}
+
+#music > header h2 {
+    font-size: 3rem;
+    background: var(--light-to-dark-gradient);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#video > header h2 {
+    font-size: 3rem;
+    background: var(--dark-to-light-gradient);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#music article ul + header,
+#video article ul + header {
+    margin-top: 4rem;
+}
+
+#music header + ul {
+    margin-top: 2rem;
+}
+
+#music article ul,
+#video article ul {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    font-weight: 500;
+}
+
+#video article ul {
+    grid-template-columns: 1fr 1fr;
+}
+
+#music article ul li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.5s;
+}
+
+#music article ul li:hover {
+    transform: scale(1.025);
+}
+
+#music article ul li > p {
+    background: var(--dark-green);
+    width: 15rem;
+    color: var(--light-salmon);
+    border-radius: 1rem 1rem 0 0;
+    padding: 0.5rem 0 0.5rem 0;
+    font-size: 90%;
+    line-height: 2rem;
+    text-align: center;
+}
+
+#music article ul li > img {
+    width: 15rem;
+    height: 100%;
+    object-fit: cover;
+}
+
+#music article ul li > img + p {
+    width: 15rem;
+    padding: 0.5rem 0 0.25rem 0;
+    line-height: unset;
+    display: flex;
+    justify-content: space-evenly;
+    background: var(--light-salmon);
+    border-radius: 0 0 1rem 1rem;
+}
+
+#music article ul li > img + p img {
+    height: 1.5rem;
+    transition: transform 0.5s;
+}
+
+#music article ul li > img + p img:hover {
+    transform: scale(1.2);
+}
+
+#video article a {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 560px;
+    height: 315px;
+    transition: transform 0.3s;   
+}
+
+#video article a:hover {
+    transform: scale(1.025);
+}
+
+#video article a img {
+    width: 100%;
+    height: 315px;
+    object-fit: cover;
+    border-radius: 1rem;
+}
+
+#video article a:first-child,
+#video article a:first-child + a {
+    margin-top: 2rem;
+}
+
+footer {
+    padding: 10rem 3rem;
+    background: var(--light-green);
+    color: var(--dark-green);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+footer ul {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1rem;
+}
+
+footer ul li {
+    display: flex;
+    height: 4rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--dark-green);
+    background: var(--light-salmon);
+    padding: 1rem;
+    border-radius: 1rem;
+    transition: transform 0.3s;
+}
+
+footer ul a {
+    text-decoration: none;
+}
+
+footer ul li:hover {
+    transform: scale(1.05)
+}
+
+footer ul li img {
+    height: 2rem;
+}
+
+footer > p {
+    margin-top: 15rem;
+}
+
+footer p a {
+    color: var(--dark-green);
+}
+
+@media(max-width: 950px) {
+    nav {
+        font-size: 90%;
+    }
+    body > header {
+        background: var(--dark-green);
+        padding: 1rem;
+    }
+    body > header h1,
+    body > header p {
+        margin: 0 auto;
+        text-align: center;
+    }
+    #music, 
+    #video {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    #music h2, 
+    #video h2 {
+        margin: 0 auto;
+    }
+    #video article ul {
+        grid-template-columns: 1fr;
+    }
+    #video article a:first-child + a {
+        margin-top: 0;
+    }
+    #music article header h3,
+    #video article header h3 {
+        text-align: center;
+    }
+    footer ul {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    footer h3 {
+        text-align: center;
+    }
+}
+
+@media(max-width: 1200px) {
+    #music article ul {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media(max-width: 820px) {
+    #music article ul {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media(max-width: 540px) {
+    #music article ul {
+        grid-template-columns: 1fr;
+    }
+    #music article ul li > p {
+        width: 75%;
+    }
+    
+    #music article ul li > img {
+        width: 75%;
+    }
+    
+    #music article ul li > img + p {
+        width: 75%;
+    }
+}
+
+@media(max-width: 360px) {
+    footer ul {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
