@@ -123,24 +123,17 @@ body > header p {
 #music > header,
 #video > header {
     display: flex;
-    margin-top: -3rem;
+    margin-top: 3rem;
     height: 6rem;
     align-items: center;
-    margin-bottom: 6rem;
+    margin-bottom: 3rem;
 }
 
-#music > header h2 {
-    font-size: 3rem;
-    background: var(--light-to-dark-gradient);
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
+#music > header h2, 
 #video > header h2 {
     font-size: 3rem;
-    background: var(--dark-to-light-gradient);
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: var(--dark-green);
+    background: var(--light-green);
 }
 
 #music article ul + header,
@@ -188,7 +181,7 @@ body > header p {
 
 #music article ul li > img {
     width: 15rem;
-    height: 100%;
+    height: 15rem;
     object-fit: cover;
 }
 
